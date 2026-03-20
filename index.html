@@ -1,4 +1,61 @@
-<option value="https://vidsrc.xyz/embed/movie/tt0436087">[V] Spider-Man: Into the Spider-Verse</option>
-<option value="https://vidsrc.me/embed/movie?imdb=tt0111161">[V] The Shawshank Redemption</option>
-<option value="https://vidsrc.pm/embed/movie/tt0107290">[V] Jurassic Park</option>
-<option value="https://vidsrc.xyz/embed/movie/tt0109830">[V] Forrest Gump</option>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes</title>
+    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #fff; color: #000; }
+        #essay-view { padding: 60px 15% 200px 15%; line-height: 1.6; }
+        #game-vault { display: none; margin: 20px 0; border: 1px dashed #ccc; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+        #game-selector { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #34a853; border-radius: 5px; }
+        iframe { width: 100%; height: 650px; border: none; background: #000; border-radius: 8px; }
+        .dot { cursor: text; color: inherit; text-decoration: none; font-weight: bold; }
+        .btn-load { background: #34a853; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        .status-bar { color: #666; font-size: 12px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div id="essay-view">
+        <div class="status-bar">Saved to Drive: 1 minute ago</div>
+        <h1 style="font-size: 28px;">The Economic Catalyst of 1929</h1>
+        <hr>
+        <p>The stock market crash of 1929 was not the sole cause of the Great Depression, but it did act as an accelerant. By October, investors had begun to lose confidence in the stability of the market. On October 24, known as Black Thursday, a record 12.9 million shares were traded. This era was marked by high unemployment and a sharp decline in the GDP of most nations<span class="dot" onclick="unlock()">.</span></p>
+
+        <div id="game-vault">
+            <h3 style="font-size: 16px; margin-top: 0; color: #34a853;">Economic Simulation Archive</h3>
+            <select id="game-selector">
+                <option value="">-- [CHOOSE DATA SET] --</option>
+                <option value="https://3kh0-assets.github.io/slope/">[G] Physics Momentum (Slope)</option>
+                <option value="https://pure-rb.github.io/">[G] Strategic Management (Retro Bowl)</option>
+                <option value="https://3kh0-assets.github.io/bitlife/">[G] Population Demo (Bitlife)</option>
+                <option value="https://3kh0-assets.github.io/tunnel-rush/">[G] Tunnel Rush (Velocity)</option>
+                <option value="https://vidsrc.xyz/embed/movie/tt0436087">[V] Spider-Man: Into the Spider-Verse</option>
+                <option value="https://vidsrc.xyz/embed/movie/tt0111161">[V] The Shawshank Redemption</option>
+                <option value="https://vidsrc.xyz/embed/movie/tt0107290">[V] Jurassic Park</option>
+            </select>
+            <button class="btn-load" onclick="loadContent()">Load Analysis Module</button>
+            <hr>
+            <div id="player-area"></div>
+        </div>
+        <p>During this time, the "Dust Bowl" also ravaged the heartland. Severe drought and wind erosion caused the phenomenon, forcing families to migrate toward the West Coast.</p>
+    </div>
+
+    <script>
+        function unlock() {
+            let key = prompt("Reviewer ID Required:");
+            if (key === "0000") { document.getElementById('game-vault').style.display = 'block'; }
+        }
+        function loadContent() {
+            let choice = document.getElementById('game-selector').value;
+            if (choice) { document.getElementById('player-area').innerHTML = '<iframe src="' + choice + '" allowfullscreen></iframe>'; }
+        }
+        window.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                document.getElementById('game-vault').style.display = 'none';
+                document.getElementById('player-area').innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
