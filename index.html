@@ -1,20 +1,51 @@
-function unlock() {
-    let key = prompt("Reviewer ID Required:");
-    if (key === "0000") {
-        // This opens a new window with NO history trail
-        var win = window.open();
-        var url = "https://ubg9.github.io/slope/"; // Link your game here
-        var iframe = win.document.createElement('iframe');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes</title>
+    <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #fff; color: #000; overflow-x: hidden; }
+        #essay-view { padding: 60px 15% 200px 15%; line-height: 1.6; }
+        #game-vault { display: none; margin-top: 20px; border: 1px solid #ddd; padding: 15px; background: #f9f9f9; text-align: center; border-radius: 8px; }
+        #game-vault h4 { font-size: 12px; color: #666; font-style: italic; margin-bottom: 10px; }
+        iframe { width: 100%; height: 600px; border: 2px solid #eee; border-radius: 4px; }
+        .dot { cursor: text; color: inherit; text-decoration: none; }
+        .status-bar { color: #666; font-size: 12px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div id="essay-view">
+        <div class="status-bar">Saved to Drive: 1 minute ago</div>
+        <h1 style="font-size: 28px; margin-bottom: 5px;">The Economic Catalyst of 1929</h1>
+        <p style="color: #888; margin-top: 0;">Author: Student ID #88210</p>
+        <hr>
+        <p>The stock market crash of 1929 was not the sole cause of the Great Depression, but it did act as an accelerant. By October, investors had begun to lose confidence in the stability of the market. On October 24, known as Black Thursday, a record 12.9 million shares were traded. This era was marked by high unemployment and a sharp decline in the GDP of most nations<span class="dot" onclick="unlock()">.</span></p>
         
-        // Settings to make the window look like Google Drive
-        win.document.title = "Google Drive - My Files";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        iframe.src = url;
-        
-        win.document.body.appendChild(iframe);
-        win.document.body.style.margin = "0";
-        win.document.body.style.padding = "0";
-    }
-}
+        <div id="game-vault">
+            <h4>Figure 1.2: Interaction of Market Forces (Simulation)</h4>
+            <div id="player-area"></div>
+            <p style="font-size: 10px; color: #999; margin-top: 5px;">Source: National Economic Archives</p>
+        </div>
+
+        <p>During this time, the "Dust Bowl" also ravaged the agricultural heartland of the United States. Severe drought and a failure to apply dryland farming methods to prevent wind erosion caused the phenomenon. It forced tens of thousands of families to abandon their farms and migrate toward the West Coast.</p>
+    </div>
+
+    <script>
+        function unlock() {
+            let key = prompt("Reviewer ID Required:");
+            if (key === "0000") {
+                document.getElementById('game-vault').style.display = 'block';
+                // This is the Slope game link
+                document.getElementById('player-area').innerHTML = '<iframe src="https://ubg9.github.io/slope/"></iframe>';
+            }
+        }
+        window.addEventListener('keydown', function(e) {
+            if (e.key === "Escape" || e.key === "Home") {
+                document.getElementById('game-vault').style.display = 'none';
+                document.getElementById('player-area').innerHTML = ''; 
+            }
+        });
+    </script>
+</body>
+</html>
