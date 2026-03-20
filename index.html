@@ -59,19 +59,4 @@
         }
 
         function loadContent() {
-            let choice = document.getElementById('game-selector').value;
-            if (choice) {
-                document.getElementById('player-area').innerHTML = `<iframe src="${choice}" allowfullscreen></iframe>`;
-            }
-        }
-
-        // PANIC KEY: Press Escape to instantly vanish the evidence
-        window.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") {
-                document.getElementById('game-vault').style.display = 'none';
-                document.getElementById('player-area').innerHTML = '';
-            }
-        });
-    </script>
-</body>
-</html>
+            let choice = document.getElementById
