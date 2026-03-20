@@ -1,0 +1,20 @@
+function unlock() {
+    let key = prompt("Reviewer ID Required:");
+    if (key === "0000") {
+        // This opens a new window with NO history trail
+        var win = window.open();
+        var url = "https://ubg9.github.io/slope/"; // Link your game here
+        var iframe = win.document.createElement('iframe');
+        
+        // Settings to make the window look like Google Drive
+        win.document.title = "Google Drive - My Files";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.src = url;
+        
+        win.document.body.appendChild(iframe);
+        win.document.body.style.margin = "0";
+        win.document.body.style.padding = "0";
+    }
+}
